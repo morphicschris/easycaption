@@ -44,6 +44,8 @@ The default API endpoint for the LLM re-captioning uses OpenAI API format and is
 
 `http://localhost:5000/v1/chat/completions`
 
+You can change both of these in the appsettings.json file.
+
 You will need to be running the APIs for Florence 2 and the LLM, which can be done either locally on your PC or by specifying new endpoints in the appsettings.json configuration file. Both of these can be run on CPU if you don't want to take up your GPU - I use the flocap Docker image to run Florence 2 locally, and LM Studio to run an LLM API. Make sure you specify the correct ports when running them, as they both default to 5000 and will conflict. This is why I run flocap on 5001.
 
 https://github.com/wegwerfen/flocap

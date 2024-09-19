@@ -1,5 +1,8 @@
 # EasyCaption - Quick image captioning in Windows
 
+![image](https://github.com/user-attachments/assets/fe5e83dc-f4b3-4f3a-8a1f-c86dd42ccae7)
+
+
 This is a simple tool to allow you to right-click an image in Windows File Explorer and generated/save captions for that image to a text file alongside it. It uses APIs (run separately) for Florence 2 captioning and optionally an additional LLM API to clean up the caption to remove annoying things like "This is an image of" or "in the style of a digital illustration". You can configure whether it makes the second call to clean up the caption - it's quicker if you don't run this, but the caption is much cleaner if you do.
 
 # Installation
@@ -57,6 +60,15 @@ I'm using the Llama 3.1 8B Instruct model in LM Studio. You can use your model o
 # Running the captioning
 
 With all that in place and your APIs running, all you need to do now is right-click an image file and select the "Caption" option. After a few seconds you should have a .txt file alongside your image with nice natural language captions in!
+
+# Example output
+
+![ComfyUI_temp_mkzml_00032_](https://github.com/user-attachments/assets/fb977b6b-bd1e-4183-8a1c-def9e09ba230)
+
+```
+A group of red poppies on a black background. The flowers are in full bloom, with their petals open wide and their stems and leaves visible. The background is a gradient of black and white, with some areas appearing to be splattered with red paint. The overall mood of the scene is dark and moody, with the red flowers standing out against the dark background.
+```
+
 
 # Troubleshooting
 

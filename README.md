@@ -1,9 +1,9 @@
 # EasyCaption - Quick image captioning in Windows
 
-![image](https://github.com/user-attachments/assets/fe5e83dc-f4b3-4f3a-8a1f-c86dd42ccae7)
+![image](https://github.com/user-attachments/assets/26055442-0fb6-48c1-bf4b-8faf50ab3006)
 
 
-This is a simple tool to allow you to right-click an image in Windows File Explorer and generated/save captions for that image to a text file alongside it. It uses APIs (run separately) for Florence 2 captioning and optionally an additional LLM API to clean up the caption to remove annoying things like "This is an image of" or "in the style of a digital illustration". You can configure whether it makes the second call to clean up the caption - it's quicker if you don't run this, but the caption is much cleaner if you do.
+This is a simple tool to allow you to right-click an image in Windows File Explorer and generate/save captions for that image to a text file alongside it. It uses APIs (run separately) for Florence 2 captioning and optionally an additional LLM API to clean up the caption to remove annoying things like "This is an image of" or "in the style of a digital illustration". You can configure whether it makes the second call to clean up the caption - it's quicker if you don't run this, but the caption is much cleaner if you do.
 
 # Installation
 
@@ -33,9 +33,9 @@ C:\EasyCaption\
 - Microsoft.Extensions.Primitives.dll
 ```
 
-If you extracted it in the default directory you're almost good to go. Just double-click the "Add_to_explorer_context_VIEW_README_FIRST.reg" file to add the "Capture" context menu item on .png and .jpg files. If you changed the directory where you extracted the files, open up the .reg file and modify lines 9 and 17 to point to your directory:
+Open up File Explorer and in the address bar type `shell:sendto` and press enter. Right-click inside the folder and select "New" -> "Shortcut...". In the popup, navigate to where you extracted EasyCaption.exe and select that file.
 
-`@="\"C:\\EasyCaption\\EasyCaption.exe\" \"%1\""`
+That's it! Now you can just select multiple image files, right-click them and select "Send to" -> "EasyCaption".
 
 # Configuration
 
@@ -59,9 +59,13 @@ https://lmstudio.ai/
 
 I'm using the Llama 3.1 8B Instruct model in LM Studio. You can use your model of choice but this one is fairly lightweight and handles the re-captioning well.
 
-# Running the captioning
+# Usage
 
-With all that in place and your APIs running, all you need to do now is right-click an image file and select the "Caption" option. After a few seconds you should have a .txt file alongside your image with nice natural language captions in!
+With all that in place and your APIs running, all you need to do now is right-click an image file (or multiple) and select the "Send to" -> "EasyCaption" option. After a few seconds you should have a .txt file alongside your image with nice natural language captions in!
+
+The program will ask you for two optional things
+- A trigger word which gets prepended to all of the prompts
+- A general description of what the images are about. E.g. if you are captioning images of monorails but it thinks they're trains, you can tell it here that they are monorails.
 
 # Example output
 
